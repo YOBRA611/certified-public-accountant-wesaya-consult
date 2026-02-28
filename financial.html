@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <!--favicon-->
+    <link rel="icon" href="logo/consult.jpg">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- AOS Animation CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+
+    <title>Financial Advisory</title>
+</head>
+<style>
+/* styling mission */
+.mission{
+    padding: 15px 10%;
+    padding-bottom: 60px;
+    padding-top: 60px;
+    background-color: #ffffff;
+}
+.box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 40px;
+}
+.box-content{
+    background: #ffffff;
+    text-align: center;
+    padding: 10px 5px;
+    border-radius: 5px;
+}
+.box-content h3{
+    color: rgb(0, 0, 0);
+    font-size: 25px;
+    padding: 2px 0;
+}
+.box-content p{
+    font-size: 16px;
+    line-height: 20px;
+    color: black;
+    margin-bottom: 20px;
+}
+.box-content .pic{
+    width: 70px;
+    padding: 10px;
+    border-radius: 10px;
+}
+.content-section ul {
+    list-style: none; /* Remove default bullets */
+    padding: 0;
+    margin: 0;
+}
+.content-section ul li {
+    display: flex;
+    align-items: flex-start; /* Aligns icon vertically with the text */
+    margin-bottom: 10px;
+}
+.content-section ul li i {
+    color: #000000;
+    margin-right: 0.75rem;
+    font-size: 17px;
+    flex-shrink: 0;
+    line-height: 1.7; /* Important to align the icon properly */
+}
+.content-section ul li span {
+    display: inline-block;  /* Ensures text wraps nicely */
+}
+</style>
+<body>
+    <!--scrollbutton-->
+    <div id="progress">
+        <span id="progress-value">&#9651</span>
+    </div>
+    <!--top-footer-->
+    <section class="top-footer">
+        <div class="box">
+            <div class="icon"><i class="fa fa-phone" aria-hidden="true"></i></div>
+                <div class="text-1">
+                    <p>Office line:   <a href="">+254(0)715 303083</a></p>
+                </div>
+            <div class="icon"><i class="fa fa-street-view" aria-hidden="true"></i></i></i></div>
+                    <div class="text-1">
+                        <p>Nairobi, Kenya</p>
+                    </div> 
+            <div class="social-link-list">
+                <a href="https://www.facebook.com/wesaya.walter" class="social-link"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.linkedin.com/in/cpa-wesaya-walter-1a7129b9/" class="social-link"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://x.com/WesayaWalter" class="social-link"><i class="fa-brands fa-x"></i></a>
+            </div>           
+        </div>
+    </section>
+    <!--header-->
+    <header>
+        <!-- WhatsApp Chat Button -->
+        <a href="https://wa.me/?text=Certified%20Public%20Accountant%20Wesaya%20Consulting" 
+            class="whatsapp-float" target="_blank" title="Chat with us on WhatsApp">
+            <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp Chat">
+        </a>
+
+        <div class="logo-wrapper">
+            <img src="logo/consult 1.jpg" class="logo">
+        </div>
+
+
+        <div class="menuToggle"></div>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <button class="dropbtn">About Us 
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <ul class="dropdown-content">
+                        <li><a href="overview.html">Overview</a></li>
+                        <li><a href="personal.html">Personal biography</a></li>
+                        <li><a href="company.html">Company History</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <button class="dropbtn">Services 
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <ul class="dropdown-content">
+                        <li><a href="audit.html">Auditing & Assurance</a></li>
+                        <li><a href="accounting.html">Accounting & Bookkeeping</a></li>
+                        <li><a href="tax.html">Tax Advisory Services</a></li>
+                        <li><a href="financial.html">Financial Advisory Services</a></li>
+                        <li><a href="investment.html">Investment Advisory Services</a></li>
+                        <li><a href="human.html">Human Capital Services</a></li>
+                    </ul>
+                </li>
+                <li><a href="partner.html">Partners</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!--about section-->
+    <section class="about-section">
+        <div class="container">
+            <div class="image-section">
+                <img src="image/2ccf87dd45157c519bc4cf37d90ec4f12.jpg">
+            </div>
+            <div class="content-section">
+                <div class="top">
+                    <h3>Financial Advisory Services</h3>
+                    <h4>Overview</h4>
+                    <p class="about-text">Sound financial decisions are critical to business sustainability 
+                        and growth. Our Financial Advisory services provide strategic guidance to help 
+                        organizations navigate financial challenges and seize opportunities.
+                    <br>We partner with business owners and management teams to develop practical financial 
+                    strategies tailored to their objectives.</p>
+                    <h4>What We Offer</h4>
+                    <ul>
+                    <li>
+                        <i class="fa fa-circle-check"></i>
+                        <span>Financial planning and budgeting</span>
+                    </li>
+                    <li>
+                        <i class="fa fa-circle-check"></i>
+                        <span>Cash flow management</span>
+                    </li>
+                    <li>
+                        <i class="fa fa-circle-check"></i>
+                        <span>Business performance analysis</span>
+                    </li>
+                    <li>
+                        <i class="fa fa-circle-check"></i>
+                        <span>Feasibility studies</span>
+                    </li>
+                    <li>
+                        <i class="fa fa-circle-check"></i>
+                        <span>Financial modeling</span>
+                    </li>
+                    <li>
+                        <i class="fa fa-circle-check"></i>
+                        <span>Business restructuring advisory</span>
+                    </li>
+                    <li>
+                        <i class="fa fa-circle-check"></i>
+                        <span>Cost optimization strategies</span>
+                    </li>
+                </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--mission-->
+    <section class="mission">
+        <div class="box-container">   
+            <div class="box-content">
+                <h3>Why It Matters</h3>
+                    <p>Without proper planning and financial analysis, businesses risk poor resource allocation and missed opportunities. Strategic financial guidance ensures long-term stability and profitability.</p>
+            </div>
+            <div class="box-content">
+                <h3>Why Choose Us</h3>
+                    <p>We blend analytical expertise with real-world business insight to deliver solutions that drive measurable results.
+                    </p>
+            </div>
+        </div>
+    </section>
+    <!--footer section-->
+    <footer>
+        <div class="footer-col">
+            <h2>Working Hours</h2>
+            <ul>
+                <li><span>Monday - Friday: 8 AM - 5PM</span></li>
+                <li><span>Saturday: 8 AM - 5PM</span></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h2>Quick Links</h2>
+            <ul class="list">
+                <li><a href="Index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="service.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h2>Follow Us</h2>
+            <div class="social-icons">
+                <li><a href="https://www.facebook.com/wesaya.walter"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="https://www.linkedin.com/in/cpa-wesaya-walter-1a7129b9/"><i class="fab fa-linkedin-in"></i></a></li>
+                <li><a href="https://x.com/WesayaWalter"><i class="fab fa-x"></i></a></li>
+            </div>
+        </div>
+        <div class="footer-col">
+            <h2>Contact Us</h2>
+            <p>Email: wesayawalter@gmail.com </p>
+            <p>Phone: +254(0)715 303 083</p>
+            <p>Address: Nairobi, Kenya</p>
+        </div>
+        <div class="bottom-bar">
+            <p>&copy;2026 Certified Public Accountant  Wesaya Consult . All rights reserved.</p>
+        </div>
+    </footer>
+    <!--crafted-->
+    <section class="bottom-footer">
+        <div class="craft">
+            <p>Crafted @  <a href="https://wa.me/254700073919?text=Hello%20I%20am%20interested%20in%20your%20services">Brydex Technologies</a></p>
+        </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1500, once: true });
+
+        const menuToggle = document.querySelector('.menuToggle');
+        const header = document.querySelector('header');
+        const dropdowns = document.querySelectorAll('.dropdown');
+
+        // Mobile menu toggle
+        menuToggle.addEventListener('click', e => {
+            e.stopPropagation();
+            header.classList.toggle('active');
+        });
+
+        // Mobile dropdown toggle
+        dropdowns.forEach(dropdown => {
+            const btn = dropdown.querySelector('.dropbtn');
+            const content = dropdown.querySelector('.dropdown-content');
+
+            btn.addEventListener('click', e => {
+                // Only mobile (<=900px)
+                if (window.innerWidth > 900) return;
+
+                e.preventDefault();
+                e.stopPropagation();
+
+                // Close other dropdowns
+                dropdowns.forEach(d => {
+                    if (d !== dropdown) d.classList.remove('active');
+                });
+
+                // Toggle this dropdown
+                dropdown.classList.toggle('active');
+            });
+        });
+
+        // Close dropdowns & mobile menu when clicking outside
+        document.addEventListener('click', e => {
+            if (window.innerWidth <= 900) {
+                dropdowns.forEach(d => d.classList.remove('active'));
+                header.classList.remove('active');
+            }
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('nav ul li a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 900) {
+                    dropdowns.forEach(d => d.classList.remove('active'));
+                    header.classList.remove('active');
+                }
+            });
+        });
+
+        // Reset on resize
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 900) {
+                dropdowns.forEach(d => d.classList.remove('active'));
+                header.classList.remove('active');
+            }
+        });
+
+
+
+        let calcScrollValue = () => {
+        let scrollProgress = document.getElementById("progress");
+        let progressValue = document.getElementById("progress-value");
+        let pos = document.documentElement.scrollTop;
+        let calcHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        let scrollValue = Math.round((pos * 100)/calcHeight);
+            if (pos > 100) {
+                scrollProgress.style.display = "grid";
+            } else {
+                scrollProgress.style.display = "none";
+            }
+            scrollProgress.addEventListener("click", () => {
+                document.documentElement.scrollTop = 0;
+            });
+            scrollProgress.style.background = `conic-gradient(#2e3cff ${scrollValue}%, white ${scrollValue}%)`;
+        };
+
+        window.onscroll = calcScrollValue;
+        window.onload = calcScrollValue;
+    </script>
+</body>
+</html>

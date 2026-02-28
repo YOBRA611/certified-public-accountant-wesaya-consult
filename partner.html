@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <!--favicon-->
+    <link rel="icon" href="logo/consult.jpg">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- AOS Animation CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+
+    <title>Tax Advisory</title>
+</head>
+<style>
+/* styling mission */
+.mission{
+    padding: 15px 10%;
+    padding-bottom: 60px;
+    padding-top: 60px;
+    background-color: #ffffff;
+}
+.box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 40px;
+}
+.box-content{
+    background: #ffffff;
+    text-align: center;
+    padding: 10px 5px;
+    border-radius: 5px;
+}
+.box-content h3{
+    color: rgb(0, 0, 0);
+    font-size: 25px;
+    padding: 2px 0;
+}
+.box-content p{
+    font-size: 16px;
+    line-height: 20px;
+    color: black;
+    margin-bottom: 20px;
+}
+.box-content .pic{
+    width: 70px;
+    padding: 10px;
+    border-radius: 10px;
+}
+/* department*/
+.services-section {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 2rem;
+  padding: 30px;
+}
+.services-section h2 {
+  grid-column: 1 / -1;
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: left;       /* align with left buttons */
+  padding-left: 0;        /* optional: same padding as sidebar */
+}
+.services-section p {
+  grid-column: 1 / -1;
+  font-size: 17px;
+  text-align: left;       /* align with left buttons */
+  padding-left: 0;        /* optional: same padding as sidebar */
+}
+.services-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.dept-btn {
+  position: relative;            /* required for the arrow positioning */
+  padding: 1rem 1rem;         /* keep padding standard */
+  border: none;
+  border-radius: 3px;
+  font-size: 17px;
+  font-weight: 400;
+  text-align: left;
+  cursor: pointer;
+}
+/* Active & hover styles */
+.dept-btn.active,
+.dept-btn:hover {
+  color: #0C3BC7;
+}
+.services-content {
+  display: block;
+  flex: 2;
+  min-width: 80px;
+}
+/* Hide all department containers by default */
+.dept-services {
+  display: none;
+  gap: 1.5rem;
+}
+/* Show active department */
+.dept-services.active {
+  display: grid;
+}
+.service-card {
+  padding: 0rem 1rem;
+  display: flex;
+  gap: 50px;
+}
+.dept-services h3{
+    grid-column: 1 / -1;
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-align: left;       /* align with left buttons */
+    padding-left: 0;        /* optional: same padding as sidebar */
+}
+.service-card .pic{
+    flex: 1;
+    min-width: 390px;
+    padding: 1px;
+}
+.service-card img{
+    width: 100%;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.393);;
+}
+.service-card p{
+    margin-top: px;
+    font-size: 15.8px;
+    text-align: justify;
+}
+/* Arrow outside the button */
+.dept-btn.active::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 100%;                 /* attach outside the right edge */
+  margin-left: 1px;           /* small gap between button and arrow */
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+  border-left: 12px solid #0C3BC7; /* arrow color */
+}
+.service-card ul {
+    list-style: none; /* Remove default bullets */
+    padding: 0;
+    margin: 0;
+    margin-top: 10px;
+}
+.service-card ul li {
+    display: flex;
+    align-items: flex-start; /* Aligns icon vertically with the text */
+    margin-bottom: 10px;
+}
+.service-card ul li i {
+    color: #000000;
+    margin-right: 0.75rem;
+    font-size: 17px;
+    flex-shrink: 0;
+    line-height: 1.7; /* Important to align the icon properly */
+}
+.service-card ul li span {
+    display: inline-block;  /* Ensures text wraps nicely */
+}
+@media (max-width: 900px) {
+    .services-section {
+        grid-template-columns: 1fr;
+    }
+    .dept-btn.active::after {
+        display: none;  /* optional, hides arrow on mobile */
+    }
+    .service-card{
+            flex-direction: column;
+    }
+    .service-card .pic{
+        flex: 1;
+        min-width: 250px;
+        padding: 10px;        
+    }
+}
+</style>
+<body>
+    <!--scrollbutton-->
+    <div id="progress">
+        <span id="progress-value">&#9651</span>
+    </div>
+    <!--top-footer-->
+    <section class="top-footer">
+        <div class="box">
+            <div class="icon"><i class="fa fa-phone" aria-hidden="true"></i></div>
+                <div class="text-1">
+                    <p>Office line:   <a href="">+254(0)715 303083</a></p>
+                </div>
+            <div class="icon"><i class="fa fa-street-view" aria-hidden="true"></i></i></i></div>
+                    <div class="text-1">
+                        <p>Nairobi, Kenya</p>
+                    </div> 
+            <div class="social-link-list">
+                <a href="https://www.facebook.com/wesaya.walter" class="social-link"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.linkedin.com/in/cpa-wesaya-walter-1a7129b9/" class="social-link"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://x.com/WesayaWalter" class="social-link"><i class="fa-brands fa-x"></i></a>
+            </div>           
+        </div>
+    </section>
+    <!--header-->
+    <header>
+        <!-- WhatsApp Chat Button -->
+        <a href="https://wa.me/?text=Certified%20Public%20Accountant%20Wesaya%20Consulting" 
+            class="whatsapp-float" target="_blank" title="Chat with us on WhatsApp">
+            <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp Chat">
+        </a>
+
+        <div class="logo-wrapper">
+            <img src="logo/consult 1.jpg" class="logo">
+        </div>
+
+
+        <div class="menuToggle"></div>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <button class="dropbtn">About Us 
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <ul class="dropdown-content">
+                        <li><a href="overview.html">Overview</a></li>
+                        <li><a href="personal.html">Personal biography</a></li>
+                        <li><a href="company.html">Company History</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <button class="dropbtn">Services 
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <ul class="dropdown-content">
+                        <li><a href="audit.html">Auditing & Assurance</a></li>
+                        <li><a href="accounting.html">Accounting & Bookkeeping</a></li>
+                        <li><a href="tax.html">Tax Advisory Services</a></li>
+                        <li><a href="financial.html">Financial Advisory Services</a></li>
+                        <li><a href="investment.html">Investment Advisory Services</a></li>
+                        <li><a href="human.html">Human Capital Services</a></li>
+                    </ul>
+                </li>
+                <li><a href="partner.html">Partners</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!--about section-->
+    <section class="about-section">
+        <div class="container">
+            <div class="image-section">
+                <img src="image/54d56978cfad33fad3d805ef9dadb99b.jpg">
+            </div>
+            <div class="content-section">
+                <div class="top">
+                    <h3>Industries We Serve</h3>
+                    <h4>Overview</h4>
+                    <p class="about-text">We proudly serve a diverse portfolio of clients across Kenya’s dynamic 
+                        economic landscape, regional and globally. Our industry-focused approach allows us to understand sector-specific 
+                        regulations, reporting requirements, and operational challenges unique to the Kenyan environment.
+                        <br> <br>With deep knowledge of compliance frameworks such as the Kenya Revenue Authority (KRA) 
+                        regulations, the NGO Coordination Board, the Public Benefit Organizations (PBO) Act, 
+                        Central Bank of Kenya (CBK) guidelines, and other statutory requirements, we help our 
+                        clients operate confidently, compliantly, and sustainably.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Departments/Services Overview-->
+    <section class="services-section">
+        <h2>Who we serve</h2>
+        <p>Certified Public Accountant Wesaya Consult</p>
+        <!-- LEFT SIDEBAR -->
+        <div class="services-sidebar">
+            <button class="dept-btn active" data-target="Non-Governmental Organizations">Non-Governmental Organizations (NGOs)</button>
+            <button class="dept-btn" data-target="Non-Profit Organizations">Non-Profit Organizations (NPOs)</button>
+            <button class="dept-btn" data-target="Micro, Small & Medium Enterprises (MSMEs)">Micro, Small & Medium Enterprises (MSMEs)</button>
+            <button class="dept-btn" data-target="Financial Institutions">Financial Institutions</button>
+            <button class="dept-btn" data-target="Individuals">Individuals</button>
+        </div>
+
+        <!-- RIGHT CONTENT -->
+        <div class="services-content">
+        <!-- Non-Governmental organizations -->
+        <div class="dept-services" id="Non-Governmental Organizations">
+            <h3>Non-Governmental Organizations (NGOs)</h3>
+            <div class="service-card">
+                <div>
+                    <p>Non-Governmental Organizations in Kenya operate under strict oversight from 
+                        the NGO Coordination Board and are often accountable to multiple stakeholders 
+                        including donors, development partners, and government agencies.
+                    <br> <br>We support NGOs with:
+                    </p>
+                    <ul>
+                    <li>
+                        <i class="fa fa-circle-check"></i>
+                        <span>Donor fund accountability and grant reporting</span>
+                    </li>
+                    <li>
+                        <i class="fa fa-circle-check"></i>
+                        <span>Compliance with NGO Board requirements</span>
+                    </li>
+                    <li>
+                        <i class="fa fa-circle-check"></i>
+                        <span>Financial statement preparation in accordance with applicable standards</span>
+                    </li>
+                    <li>
+                        <i class="fa fa-circle-check"></i>
+                        <span>Internal audits and risk management reviews</span>
+                    </li>
+                    <li>
+                        <i class="fa fa-circle-check"></i>
+                        <span>Budget monitoring and expenditure tracking</span>
+                    </li>
+                    <li>
+                        <i class="fa fa-circle-check"></i>
+                        <span>KRA tax compliance, including PAYE, VAT (where applicable), and withholding tax</span>
+                    </li>
+                </ul>
+                <p>Our services are designed to ensure transparency, strengthen governance structures, and enhance donor 
+                    confidence. We help NGOs maintain clean financial records and meet both statutory and donor reporting 
+                    deadlines without stress.</p>
+                </div>
+                <div class="pic">
+                    <img src="image/18490141a64d79f09f1b7e8c54c2ae2a.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        <!-- Non-Profit Organizations -->
+        <div class="dept-services" id="Non-Profit Organizations">
+            <h3>Non-Profit Organizations (NPOs)</h3>
+            <div class="service-card">
+                <div>
+                    <p>Non-Profit Organizations, including charities, foundations, and faith-based 
+                        organizations, require strong financial oversight to ensure sustainability 
+                        and regulatory compliance.
+                    <br> <br>We assist NPOs with:
+                    </p>
+                    <ul>
+                    <li>
+                        <i class="fa fa-circle-check"></i>
+                        <span>Registration and compliance advisory</span>
+                    </li>
+                    <li>
+                        <i class="fa fa-circle-check"></i>
+                        <span>Financial reporting and bookkeeping systems</span>
+                    </li>
+                    <li>
+                        <i class="fa fa-circle-check"></i>
+                        <span>Governance and internal control structures</span>
+                    </li>
+                    <li>
+                        <i class="fa fa-circle-check"></i>
+                        <span>Tax exemption advisory and KRA compliance</span>
+                    </li>
+                    <li>
+                        <i class="fa fa-circle-check"></i>
+                        <span>Annual returns and statutory filings</span>
+                    </li>
+                </ul>
+                <p>Our role is to help nonprofit entities demonstrate accountability, maintain public 
+                    trust, and ensure proper utilization of funds in alignment with their mission and legal obligations.</p>
+                </div>
+                <div class="pic">
+                    <img src="image/b200ddf7fbb33d3518f6806fc4148193.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        <!-- Micro, Small & Medium Enterprises -->
+        <div class="dept-services" id="Micro, Small & Medium Enterprises (MSMEs)">
+            <h3>Micro, Small & Medium Enterprises (MSMEs)</h3>
+            <div class="service-card">
+                <div>
+                    <p>MSMEs are the backbone of global economy, contributing significantly to employment and 
+                    GDP growth. However, many small and growing businesses struggle with financial management, tax 
+                    compliance, and regulatory requirements.
+                    <br> <br>We support MSMEs with:
+                    </p>
+                    <ul>
+                    <li>
+                        <i class="fa fa-circle-check"></i>
+                        <span>Bookkeeping and accounting system setup</span>
+                    </li>
+                    <li>
+                        <i class="fa fa-circle-check"></i>
+                        <span>KRA compliance (iTax filings, VAT, PAYE, corporate tax, turnover tax)</span>
+                    </li>
+                    <li>
+                        <i class="fa fa-circle-check"></i>
+                        <span>Financial statement preparation</span>
+                    </li>
+                    <li>
+                        <i class="fa fa-circle-check"></i>
+                        <span>Cash flow planning and budgeting</span>
+                    </li>
+                    <li>
+                        <i class="fa fa-circle-check"></i>
+                        <span>Business advisory and growth planning</span>
+                    </li>
+                    <li>
+                        <i class="fa fa-circle-check"></i>
+                        <span>Tax planning and audit support</span>
+                    </li>
+                </ul>
+                <p>We simplify compliance so business owners can focus on growth and operations. 
+                    Our practical, hands-on approach ensures MSMEs remain compliant while building 
+                    financially sound and scalable enterprises.</p>
+                </div>
+                <div class="pic">
+                    <img src="image/2ccf87dd45157c519bc4cf37d90ec4f12.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        <!-- Financial Institutions -->
+        <div class="dept-services" id="Financial Institutions">
+            <h3>Financial Institutions</h3>
+            <div class="service-card">
+                <div>
+                    <p>Financial institutions operate in a highly regulated environment governed by 
+                        authorities such as the Central Bank of Kenya (CBK), SACCO Societies Regulatory 
+                        Authority (SASRA), and other regulatory bodies.
+                    <br> <br>We provide specialized services including:
+                    </p>
+                    <ul>
+                    <li>
+                        <i class="fa fa-circle-check"></i>
+                        <span>Internal and external audit support</span>
+                    </li>
+                    <li>
+                        <i class="fa fa-circle-check"></i>
+                        <span>Regulatory compliance reviews</span>
+                    </li>
+                    <li>
+                        <i class="fa fa-circle-check"></i>
+                        <span>Risk management and internal control assessments</span>
+                    </li>
+                    <li>
+                        <i class="fa fa-circle-check"></i>
+                        <span>Financial reporting advisory</span>
+                    </li>
+                    <li>
+                        <i class="fa fa-circle-check"></i>
+                        <span>Corporate governance advisory</span>
+                    </li>
+                </ul>
+                <p>Our team understands the complexity of regulatory reporting and risk management within 
+                    Kenya’s financial sector. We help institutions strengthen compliance frameworks, improve 
+                    reporting accuracy, and enhance operational resilience.</p>
+                </div>
+                <div class="pic">
+                    <img src="image/fe9158defa5ba6cd182c773acf5a7c46.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        <!-- Individuals -->
+        <div class="dept-services" id="Individuals">
+            <h3>Individuals</h3>
+            <div class="service-card" id="General-laboratory-tests">
+                <div>
+                    <p>We also serve individuals seeking professional financial and tax guidance within Kenya’s and global evolving regulatory environment.
+                    <br> <br>Our services include:
+                    </p>
+                    <ul>
+                    <li>
+                        <i class="fa fa-circle-check"></i>
+                        <span>Personal income tax filing through KRA iTax</span>
+                    </li>
+                    <li>
+                        <i class="fa fa-circle-check"></i>
+                        <span>Tax planning and advisory</span>
+                    </li>
+                    <li>
+                        <i class="fa fa-circle-check"></i>
+                        <span>Wealth planning and investment advisory</span>
+                    </li>
+                    <li>
+                        <i class="fa fa-circle-check"></i>
+                        <span>Capital gains tax advisory</span>
+                    </li>
+                    <li>
+                        <i class="fa fa-circle-check"></i>
+                        <span>Rental income tax compliance</span>
+                    </li>
+                    <li>
+                        <i class="fa fa-circle-check"></i>
+                        <span>Tax dispute support</span>
+                    </li>
+                </ul>
+                <p>We provide clear, practical advice to help individuals remain compliant while optimizing 
+                    their financial position. Whether you are an entrepreneur, professional, landlord, or 
+                    investor, we help you navigate financial obligations with confidence.</p>
+                </div>
+                <div class="pic">
+                    <img src="image/2ccf87dd45157c519bc4cf37d90ec4f1.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--footer section-->
+    <footer>
+        <div class="footer-col">
+            <h2>Working Hours</h2>
+            <ul>
+                <li><span>Monday - Friday: 8 AM - 5PM</span></li>
+                <li><span>Saturday: 8 AM - 5PM</span></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h2>Quick Links</h2>
+            <ul class="list">
+                <li><a href="Index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="service.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h2>Follow Us</h2>
+            <div class="social-icons">
+                <li><a href="https://www.facebook.com/wesaya.walter"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="https://www.linkedin.com/in/cpa-wesaya-walter-1a7129b9/"><i class="fab fa-linkedin-in"></i></a></li>
+                <li><a href="https://x.com/WesayaWalter"><i class="fab fa-x"></i></a></li>
+            </div>
+        </div>
+        <div class="footer-col">
+            <h2>Contact Us</h2>
+            <p>Email: wesayawalter@gmail.com </p>
+            <p>Phone: +254(0)715 303 083</p>
+            <p>Address: Nairobi, Kenya</p>
+        </div>
+        <div class="bottom-bar">
+            <p>&copy;2026 Certified Public Accountant  Wesaya Consult . All rights reserved.</p>
+        </div>
+    </footer>
+    <!--crafted-->
+    <section class="bottom-footer">
+        <div class="craft">
+            <p>Crafted @  <a href="https://wa.me/254700073919?text=Hello%20I%20am%20interested%20in%20your%20services">Brydex Technologies</a></p>
+        </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1500, once: true });
+
+        const menuToggle = document.querySelector('.menuToggle');
+        const header = document.querySelector('header');
+        const dropdowns = document.querySelectorAll('.dropdown');
+
+        // Mobile menu toggle
+        menuToggle.addEventListener('click', e => {
+            e.stopPropagation();
+            header.classList.toggle('active');
+        });
+
+        // Mobile dropdown toggle
+        dropdowns.forEach(dropdown => {
+            const btn = dropdown.querySelector('.dropbtn');
+            const content = dropdown.querySelector('.dropdown-content');
+
+            btn.addEventListener('click', e => {
+                // Only mobile (<=900px)
+                if (window.innerWidth > 900) return;
+
+                e.preventDefault();
+                e.stopPropagation();
+
+                // Close other dropdowns
+                dropdowns.forEach(d => {
+                    if (d !== dropdown) d.classList.remove('active');
+                });
+
+                // Toggle this dropdown
+                dropdown.classList.toggle('active');
+            });
+        });
+
+        // Close dropdowns & mobile menu when clicking outside
+        document.addEventListener('click', e => {
+            if (window.innerWidth <= 900) {
+                dropdowns.forEach(d => d.classList.remove('active'));
+                header.classList.remove('active');
+            }
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('nav ul li a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 900) {
+                    dropdowns.forEach(d => d.classList.remove('active'));
+                    header.classList.remove('active');
+                }
+            });
+        });
+
+        // Reset on resize
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 900) {
+                dropdowns.forEach(d => d.classList.remove('active'));
+                header.classList.remove('active');
+            }
+        });
+
+
+
+        let calcScrollValue = () => {
+        let scrollProgress = document.getElementById("progress");
+        let progressValue = document.getElementById("progress-value");
+        let pos = document.documentElement.scrollTop;
+        let calcHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        let scrollValue = Math.round((pos * 100)/calcHeight);
+            if (pos > 100) {
+                scrollProgress.style.display = "grid";
+            } else {
+                scrollProgress.style.display = "none";
+            }
+            scrollProgress.addEventListener("click", () => {
+                document.documentElement.scrollTop = 0;
+            });
+            scrollProgress.style.background = `conic-gradient(#2e3cff ${scrollValue}%, white ${scrollValue}%)`;
+        };
+
+        window.onscroll = calcScrollValue;
+        window.onload = calcScrollValue;
+
+        // Select all buttons and department containers
+        const deptButtons = document.querySelectorAll('.dept-btn');
+        const deptContainers = document.querySelectorAll('.dept-services');
+
+        deptButtons.forEach(button => {
+        button.addEventListener('click', () => {
+
+            // Remove active class from all buttons
+            deptButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+
+            const targetId = button.getAttribute('data-target');
+
+            // Hide all department containers
+            deptContainers.forEach(div => div.style.display = 'none');
+
+            // Show only the targeted department container
+            const targetDiv = document.getElementById(targetId);
+            if (targetDiv) targetDiv.style.display = 'grid';
+        });
+        });
+
+        // Handle direct links with #hash
+        window.addEventListener('DOMContentLoaded', () => {
+        const hash = window.location.hash.replace('#', '');
+
+        if (hash) {
+            const targetService = document.getElementById(hash);
+
+            if (targetService) {
+            const parentDept = targetService.closest('.dept-services');
+
+            if (parentDept) {
+                // Activate correct department
+                deptContainers.forEach(div => div.style.display = 'none');
+                parentDept.style.display = 'grid';
+
+                // Activate correct button
+                deptButtons.forEach(btn => btn.classList.remove('active'));
+                const activeBtn = document.querySelector(
+                `.dept-btn[data-target="${parentDept.id}"]`
+                );
+                if (activeBtn) activeBtn.classList.add('active');
+
+                // Smooth scroll to service
+                setTimeout(() => {
+                targetService.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 200);
+
+                return; // stop default init
+            }
+            }
+        }
+
+        // Default behavior (no hash)
+        const firstButton = document.querySelector('.dept-btn.active') || deptButtons[0];
+        firstButton.click();
+        });
+    </script>
+</body>
+</Html>
